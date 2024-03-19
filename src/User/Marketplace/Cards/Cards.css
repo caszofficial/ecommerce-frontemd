@@ -1,0 +1,75 @@
+.parentContainer {
+    display: flex;
+    padding: 5%;
+    
+  }
+  
+  .cardContainer {
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    width: 300px;
+    height: fit-content;
+    margin: 10px;
+  }
+  
+  .imageContainer {
+    min-height: 350px;
+    min-width: 300px;
+  }
+  
+  .cardImage {
+    border-radius: 10px 10px 2px 2px;
+    min-width: 300px;
+    min-height: 350px;
+    width: 300px;
+    height: 350px;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+  }
+  
+  .cardName {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px;
+    color: #4e4e4e;
+  }
+  
+  .cardPrice {
+    text-align: end;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+    color: #2c2c2c;
+  }
+  
+  .cardStock {
+    text-align: end;
+    color: gray;
+    font-size: 12px;
+    margin: 10px;
+  }
+  
+  .addToCart {
+    margin: 20px 10px 10px 10px;
+  
+    button {
+      background-color: #5953ff;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid transparent;
+      height: 35px;
+      font-size: 18px;
+      color: #f1f1f1;
+    }
+  
+    button:hover {
+      background-color: #5953ffdc;
+    }
+  }
