@@ -39,7 +39,7 @@ const AdminPanelEditProduct = () => {
     initialValues,
     onSubmit: async (values) => {
       try {
-        axios.put(`http://localhost:3001/api/productos/${id}`, {
+        axios.put(`${import.meta.env.VITE_API_URL}/api/productos/${id}`, {
           name: values.name,
           price: values.price,
           quantity: values.quantity,
