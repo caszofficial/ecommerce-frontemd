@@ -1,30 +1,64 @@
-
 import "./Cards.css";
 import { useGetProducts } from "../../../Hooks/useGetProducts";
+import { Box, Paper, Typography } from "@mui/material";
+import { appColor } from "../../../Styling";
 
 const Cards = () => {
- 
-    const {products} = useGetProducts()
-
+  const { products } = useGetProducts();
 
   return (
-    <div className="parentContainer">
-      <div className="cardContainer">
-        {products.map((p) => (
-          <div className="card" key={p.id}>
-            <div className="imageContainer">
-              <img className="cardImage" src={p.image} alt="Not Found" />
-            </div>
-            <div className="cardName">{p.name}</div>
-            <div className="cardPrice">$ {p.price}</div>
-            <div className="cardStock">Left in stock: {p.quantity}</div>
-            <div className="addToCart">
-              <button>Add to Cart</button>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+    <Paper
+      elevation={12}
+      sx={{
+        p: 4,
+        m: "20px 40px",
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        backgroundColor: "#ebebeb",
+      }}
+    >
+      {products.map((p) => (
+        <Box
+          sx={{
+            height: "fit-content",
+            p: 2,
+            m: 1,
+            "&:hover  #ProductName": { color: appColor },
+            display: "grid",
+            alignContent: "center",
+            // border: "1px solid black",
+            borderRadius: "5px",
+            backgroundColor: "#fff",
+          }}
+          key={p.id}
+        >
+          <Box
+            component="img"
+            src={p.image}
+            alt="Not Found"
+            sx={{
+              objectFit: "cover",
+              verticalAlign: "middle",
+              minWidth: "150px",
+              minHeight: "230px",
+              maxWidth: "150px",
+              maxHeight: "230px",
+            }}
+          />
+
+          <Box sx={{ height: "100px" }}>
+            <Typography id="ProductName" sx={{ fontSize: "14px" }}>
+              {p.name}
+            </Typography>
+            <Typography sx={{ fontSize: "30px" }}>$ {p.price}</Typography>
+            <Typography sx={{ fontSize: "12px", color: "#AFAFAF" }}>
+              Left in stock: {p.quantity}
+            </Typography>
+          </Box>
+        </Box>
+      ))}
+    </Paper>
   );
 };
 

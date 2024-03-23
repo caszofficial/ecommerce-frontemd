@@ -1,7 +1,7 @@
-import { Box, Button } from "@mui/material";
+import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { logout } from "./AuthScripts";
-import { buttonStyle } from "../../Styling";
+import { appColor } from "../../Styling";
 
 const LogOutButton = () => {
   const navigate = useNavigate();
@@ -18,11 +18,21 @@ const LogOutButton = () => {
   };
 
   return (
-    <Box>
-      <Button variant="contained" onClick={() => logOut()} sx={buttonStyle}>
+    <>
+      <Button
+        variant="contained"
+        onClick={() => logOut()}
+        sx={{
+          backgroundColor: "#5A8077",
+          color: "#fff",
+          transition: "all 0.3s ease",
+          "&:hover": { backgroundColor: appColor, color: "#000" },
+          m: 1,
+        }}
+      >
         Logout
       </Button>
-    </Box>
+    </>
   );
 };
 

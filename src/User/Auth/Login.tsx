@@ -27,7 +27,7 @@ const Login = () => {
     onSubmit: async (values) => {
       try {
         const data = await axios.post(
-          "https://ecommerce-backend-50xf.onrender.com/api/users/login",
+          `${import.meta.env.VITE_API_URL}/api/users/login`,
           values
         );
         if (data.data.role === "admin") {
