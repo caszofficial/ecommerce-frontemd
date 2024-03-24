@@ -6,6 +6,8 @@ export interface Product {
   image: string;
 }
 
+export type ProductWithoutQ = Omit<Product, "quantity">
+
 export interface SnackBarProps {
   open: boolean;
 }

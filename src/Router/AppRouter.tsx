@@ -7,6 +7,7 @@ import AdminPanelCreateProduct from "../AdminPanel/AdminPanelCreateProduct/Admin
 import AdminPanelNavBar from "../AdminPanel/AdminPanelNavBar/AdminPanelNavBar";
 import { getCurrentUser } from "../User/Auth/AuthScripts";
 import AdminProfile from "../AdminPanel/AdminPanelProfile/AdminProfile";
+import Cart from "../User/Marketplace/Cart/Cart";
 
 const AppRouter = () => {
   const user = getCurrentUser();
@@ -41,6 +42,7 @@ const AppRouter = () => {
           <Routes>
             <Route path="/" element={<MainView />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </>
       )}

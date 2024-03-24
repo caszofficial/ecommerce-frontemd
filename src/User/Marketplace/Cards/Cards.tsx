@@ -1,10 +1,12 @@
 import "./Cards.css";
 import { useGetProducts } from "../../../Hooks/useGetProducts";
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Button, Paper, Typography } from "@mui/material";
 import { appColor } from "../../../Styling";
+import { useShoppingCart } from "../../Context/ShoppingCartContext";
 
 const Cards = () => {
   const { products } = useGetProducts();
+  const { increaseItemQ } = useShoppingCart();
 
   return (
     <Paper
@@ -55,6 +57,11 @@ const Cards = () => {
             <Typography sx={{ fontSize: "12px", color: "#AFAFAF" }}>
               Left in stock: {p.quantity}
             </Typography>
+          </Box>
+          <Box>
+            <Button variant="contained" onClick={() => increaseItemQ(p.id)}>
+              Add to cart
+            </Button>
           </Box>
         </Box>
       ))}
